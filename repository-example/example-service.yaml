@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: name-project
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+  name: name-project
+spec:
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: name-project
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+  type: ClusterIP
